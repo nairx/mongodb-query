@@ -26,4 +26,23 @@ db.employees.insertMany([
     },
 ])
 
+db.employees.insertMany([
+    {
+        name: "Chastity Fisher",
+        email: "chastity@gmail.com",
+        department: "HR",
+        salary: 2500,
+        location: ["FL", "CA"],
+        date: Date()
+    },
+    {
+        name: "Shawn Lenahan",
+        email: "shawn@gmail.com",
+        department: "HR",
+        salary: 4600,
+        location: ["HI", "TX", "AK"],
+        date: Date()
+    },
+])
+
 db.employees.find()
