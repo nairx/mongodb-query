@@ -14,3 +14,15 @@ db.employees.updateOne({ email: "jeff@gmail.com" }, {
         salary: 5200,
     }
 }, { upsert: true })
+
+db.employees.updateMany({},{$unset:{skill:""}})
+
+db.employees.updateMany({},{$unset:{points:""}})
+
+db.employees.updateMany({},{$set:{points:5}})
+
+db.employees.updateMany({department:"HR"},{$inc:{points:1}})
+
+db.employees.updateMany({department:"HR"},{$inc:{points:-1}})
+
+db.employees.updateMany({},{$rename:{points:"score"}})
