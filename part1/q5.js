@@ -26,3 +26,9 @@ db.employees.updateMany({department:"HR"},{$inc:{points:1}})
 db.employees.updateMany({department:"HR"},{$inc:{points:-1}})
 
 db.employees.updateMany({},{$rename:{points:"score"}})
+
+db.employees.updateMany({email:"mike@gmail.com"},{$push:{location:"CA"}})
+
+db.employees.updateMany({email:"mike@gmail.com"},{$pull:{location:"CA"}})
+
+db.employees.updateMany({email:"mike@gmail.com"},{$addToSet:{location:"CA"}})
