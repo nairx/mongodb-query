@@ -21,3 +21,17 @@ db.orders.aggregate([
     }
 ])
 
+db.orders.aggregate([
+    {
+        $lookup: {
+            from: "employees",
+            let: { uid: "$empid" },
+            pipeline: [
+                { $match: { $expr: { $eq: ["$_id", "$$uid"] } } }
+            ],
+            as: "emp_details"
+        },
+    }
+])
+
+
